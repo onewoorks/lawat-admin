@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import axios from 'axios'
+import { useAuth0 } from './react-auth0-spa'
+
+import Home from './pages/public/index.jsx'
+import ProtectedHome from './pages/protected/Index.jsx'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { isAuthenticated, loginWithRedirect, loading} = useAuth0()
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    const Public = () => <Home />
+
+    return (
+        <div>
+            {!isAuthenticated && (
+                <div>
+                    <Public />
+                    <button onClick={() => loginWithRedirect({})}>
+                        Log in
+                    </button>
+                </div>
+            )}
+
+            {isAuthenticated && <ProtectedHome />}
+        </div>
+    )
 }
 
-export default App;
+export default App
