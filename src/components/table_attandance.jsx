@@ -43,7 +43,7 @@ const TableAttendance = (props) => {
     const EmptyRows = () => {
         return (
             <tr>
-                <td colspan="6" className="text-center">
+                <td colSpan="6" className="text-center">
                     <img src="./logo192.png" alt="lawat" />
                     <div className="mb-5">Tiada kehadiran hari ini {props.pickedDate}</div>
                 </td>
@@ -52,7 +52,7 @@ const TableAttendance = (props) => {
     }
     return (
         <div>
-            <table className="table table-bordered">
+            <table className="table table-bordered table-sm">
                 <caption style={{ display: 'none' }}>Senarai kehadiran</caption>
                 <thead>
                     <tr>
