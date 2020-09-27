@@ -8,7 +8,7 @@ const PageTetapanLokasi = (props) => {
     let form_lokasi = []
 
     React.useEffect(() => {
-        axios.get(`http://localhost:3009/lokasi/hkj`).then((response) => {
+        axios.get(`${process.env.REACT_APP_API}/lokasi/hkj`).then((response) => {
             setLokasi(response.data)
         })
     }, [])
@@ -20,7 +20,7 @@ const PageTetapanLokasi = (props) => {
     }
 
     const confirm_daftar = () => {
-        axios.post(`http://localhost:3009/lokasi/add-new`, {
+        axios.post(`${process.env.REACT_APP_API}/lokasi/add-new`, {
             nama_cawangan: form_lokasi.nama_cawangan,
             alamat: form_lokasi.alamat,
             no_telefon: form_lokasi.no_telefon,
@@ -32,7 +32,7 @@ const PageTetapanLokasi = (props) => {
     }
 
     const confirm_ubah = () => {
-        axios.put(`http://localhost:3009/lokasi/ubah`, {
+        axios.put(`${process.env.REACT_APP_API}/lokasi/ubah`, {
             nama_cawangan: (typeof form_lokasi.nama_cawangan === 'undefined') ? ubahLokasi.nama_cawangan : form_lokasi.nama_cawangan ,
             alamat: (typeof form_lokasi.alamat === 'undefined') ? ubahLokasi.alamat : form_lokasi.alamat,
             no_telefon: (typeof form_lokasi.no_telefon === 'undefined') ? ubahLokasi.no_telefon : form_lokasi.no_telefon,
