@@ -8,7 +8,7 @@ const CetakLokasi = (props) => {
 
     React.useEffect(() => {
         axios
-            .get(`http://localhost:3009/lokasi/info/${id}`)
+            .get(`${process.env.REACT_APP_API}/lokasi/info/${id}`)
             .then((response) => {
                 setLokasi(response.data)
             })
@@ -56,10 +56,10 @@ const CetakLokasi = (props) => {
                 <div className="content-area">
                 <div className="mt-5">
                         <div className="webQr">
-                            <QRCode value={id} />
+                            <QRCode value={`https://lawat-kajang.onewoorks-solutions.com/${id}`} />
                         </div>
                         <div className="printQr">
-                            <QRCode value={id} size={500} />
+                            <QRCode value={`https://lawat-kajang.onewoorks-solutions.com/${id}`} size={500} />
                         </div>
                         
                     </div>
