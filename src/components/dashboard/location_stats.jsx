@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, ResponsiveContainer } from 'recharts'
 
 const DashboardLocationStat = (props) => {
-    const data01 = [
-        { name: 'Group A', value: 400 },
-        { name: 'Group B', value: 300 },
-        { name: 'Group C', value: 300 },
-        { name: 'Group D', value: 200 },
-    ]
+    // const data01 = [
+    //     { name: 'Group A', value: 400 },
+    //     { name: 'Group B', value: 300 },
+    //     { name: 'Group C', value: 300 },
+    //     { name: 'Group D', value: 200 },
+    // ]
     const data02 = [
         { name: 'A1', value: 100 },
         { name: 'A2', value: 300 },

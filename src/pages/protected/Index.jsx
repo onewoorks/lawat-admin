@@ -1,31 +1,40 @@
 import React from 'react'
-import history from '../../utils/history.js'
-import { Router, Route, Switch, Link } from 'react-router-dom'
+import PageHeader from '../../components/PageHeader.jsx'
+import SideMenu from '../../components/sidemenu.jsx'
+import Dashboard from '../protected/dashboard.jsx'
+import { Switch, Route } from 'react-router-dom'
 
-import Home from './Home.jsx'
-import Daftar from './Daftar.jsx'
+import PageTetapanLokasi from './tetapan/lokasi.jsx'
 
-import NavBar from '../../components/navbar.jsx'
-import Profile from '../../components/Profile.js'
+// import PageTetapanLokasi from ''
 
-const ProtectedHome = () => {
-    const [premise, setPremise] = React.useState({})
-
+const Home = () => {
+    let uuid = window.location.pathname.replace('/', '')
+    let premise = {
+        "uuid": uuid,
+        "image": "",
+        "nama_cawangan": "HOSPITAL KAJANG"
+    }
     return (
         <div>
-            <NavBar premise={premise} />
             
-            <Router history={history}>
-            <Link to="/profile">Profile</Link>
-            <Link to="/daftar">Profile</Link>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path='/daftar' exact component={Daftar} />
-                    <Route path="/profile" component={Profile} />
-                </Switch>
-            </Router>
+            <div className="container-fluid">
+            <PageHeader premise={premise} />
+                <div className="row">
+                    <nav className="col-md-2 d-none d-md-block bg-light sidebar">
+                        <SideMenu />
+                    </nav>
+                    <div role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4 mt-2" >
+                        <Switch>
+                            <Route exact path='/'><Dashboard premise={premise} /></Route>
+                            <Route exact path='/tetapan/lokasi' component={PageTetapanLokasi} />
+                        </Switch>
+                    </div>
+                </div>
+            </div>  
         </div>
+        
     )
 }
 
-export default ProtectedHome
+export default Home

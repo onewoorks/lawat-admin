@@ -1,29 +1,16 @@
 import React from 'react'
 
 const PageHeader = (props) => {
-    let premise = props.premise
+    // let premise = props.premise
     return (
-        <div className="jumbotron" style={{ marginTop: 50 }}>
-                <div className="row">
-                    <div className="col-2">
-                        <img
-                            src={premise.image}
-                            alt={premise.nama_cawangan}
-                            className="img-fluid"
-                        />
-                    </div>
-                    <div className="col-9">
-                        <h1 className="display-4">
-                            {premise.nama_cawangan} - {premise.cawangan_induk}
-                        </h1>
-                        <div className="lead">
-                            <div>{premise.alamat}</div>
-                            <div>{premise.no_telefon}</div>
-                            <div>{premise.maklumat_tambahan}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <div className="navbar-brand col-sm-3 col-md-2 mr-0">Hospital Kajang</div>
+            <ul className="navbar-nav px-3">
+                <li className="nav-item text-nowrap">
+                <div className="nav-link">Sign out</div>
+                </li>
+            </ul>
+        </nav>  
     )
 }
 

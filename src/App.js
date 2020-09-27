@@ -1,9 +1,13 @@
 import React from 'react'
-import axios from 'axios'
-import { useAuth0 } from './react-auth0-spa'
+// import axios from 'axios'
+// import { useAuth0 } from './react-auth0-spa'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import Home from './pages/public/index.jsx'
-import ProtectedHome from './pages/protected/Index.jsx'
+// import Home from './pages/protected/index.jsx'
+import ProtectedHome from './pages/protected/index.jsx'
+import CetakLokasi from './pages/protected/cetak/lokasi.jsx'
+
+import { Switch, Route } from 'react-router-dom'
 
 function App() {
     // const { isAuthenticated, loginWithRedirect, loading} = useAuth0()
@@ -11,10 +15,16 @@ function App() {
     // if (loading) {
     //     return <div>Loading...</div>
     // }
-    const Public = () => <Home />
+    // const Public = () => <Home />
     return (
-                <div className="container">
-                    <Public />
+                <div className="">
+                    <Router>
+                        <Switch>
+                            <Route path="/cetak/:module/:id" component={CetakLokasi} /> 
+                            <Route path="/" component={ProtectedHome} />
+                        </Switch>
+                    </Router>
+                    
                 </div>
     )
     // return (
