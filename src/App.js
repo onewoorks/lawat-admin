@@ -4,7 +4,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 // import Home from './pages/protected/index.jsx'
-import ProtectedHome from './pages/protected/index.jsx'
+import ProtectedHome from './pages/protected/Index.jsx'
 import CetakLokasi from './pages/protected/cetak/lokasi.jsx'
 
 import { Switch, Route } from 'react-router-dom'
