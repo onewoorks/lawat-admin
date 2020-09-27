@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader.jsx'
 import SideMenu from '../../components/sidemenu.jsx'
-import Dashboard from '../protected/dashboard.jsx'
+import Dashboard from './Dashboard.jsx'
 import { Switch, Route } from 'react-router-dom'
 
 import PageTetapanLokasi from './tetapan/lokasi.jsx'
