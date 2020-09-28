@@ -4,6 +4,9 @@ import SideMenu from '../../components/sidemenu.jsx'
 import Dashboard from './Dashboard.jsx'
 import { Switch, Route } from 'react-router-dom'
 
+import PageLaporanPengunjung from './laporan/pengunjung.jsx'
+import PageLaporanLokasi from './laporan/lokasi.jsx'
+import PageTetapanPengguna from './tetapan/pengguna.jsx'
 import PageTetapanLokasi from './tetapan/lokasi.jsx'
 
 // import PageTetapanLokasi from ''
@@ -28,6 +31,9 @@ const Home = () => {
                         <Switch>
                             <Route exact path='/'><Dashboard premise={premise} /></Route>
                             <Route exact path='/tetapan/lokasi' component={PageTetapanLokasi} />
+                            <Route exact path='/laporan/pengunjung' component={PageLaporanPengunjung} />
+                            <Route exact path='/laporan/lokasi' component={PageLaporanLokasi} />
+                            <Route exact path='/tetapan/pengguna' component={PageTetapanPengguna} />
                         </Switch>
                     </div>
                 </div>

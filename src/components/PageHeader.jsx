@@ -7,7 +7,7 @@ const PageHeader = (props) => {
             <div className="navbar-brand col-sm-3 col-md-2 mr-0">Hospital Kajang</div>
             <ul className="navbar-nav px-3">
                 <li className="nav-item text-nowrap">
-                <div className="nav-link">Sign out</div>
+                <div className="nav-link">Daftar Keluar</div>
                 </li>
             </ul>
         </nav>  

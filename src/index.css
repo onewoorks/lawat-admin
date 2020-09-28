@@ -109,3 +109,13 @@ code {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+.tabscroll .nav-tabs {
+  /* overflow: hidden; */
+  overflow-x: hidden; 
+  overflow-y:hidden;
+  flex-wrap: nowrap; 
+}
+.tabscroll .nav-tabs .nav-link {
+ white-space: nowrap;
+}

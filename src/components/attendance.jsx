@@ -8,9 +8,10 @@ const Attendance = (props) => {
     const [theDate, setTheDate] = React.useState([])
     const [pickDate, setPickDate] = React.useState(moment().format('DD/MM/YYYY'))
 
+
     React.useEffect(()=>{
         axios.post(
-            `${process.env.REACT_APP_API}/attendance/date-group`,
+            `${process.env.REACT_APP_API}/attendance/date-group/semua`,
             {
                 uuid: window.location.pathname.replace('/', '')
             }
@@ -34,6 +35,7 @@ const Attendance = (props) => {
     }
     return (
         <div>
+            <div className="tabscroll">
             <ul className="nav nav-tabs mb-3">
                 <li className="nav-item">
                     <div
@@ -44,6 +46,8 @@ const Attendance = (props) => {
             </ul>
 
             <TableAttendance pickedDate={pickDate} uuid={props.uuid} />
+            </div>
+            
         </div>
     )
 }

@@ -8,7 +8,7 @@ const PageTetapanLokasi = (props) => {
     let form_lokasi = []
 
     React.useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API}/lokasi/hkj`).then((response) => {
+        axios.get(`${process.env.REACT_APP_API}/lokasi/cawangan/hkj`).then((response) => {
             setLokasi(response.data)
         })
     }, [])
@@ -113,7 +113,6 @@ const PageTetapanLokasi = (props) => {
     }
 
     const FormDaftar = () => {
-        console.log(ubahLokasi)
         return (
             <div className="card">
                 <div className="card-body">

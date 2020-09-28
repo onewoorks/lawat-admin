@@ -10,7 +10,7 @@ const TableAttendance = (props) => {
     React.useEffect(() => {
         let premise_uuid = window.location.pathname.replace('/', '')
         axios
-            .post(`${process.env.REACT_APP_API}/attendance/list`, {
+            .post(`${process.env.REACT_APP_API}/attendance/list/semua`, {
                 uuid: premise_uuid,
                 tarikh: formatingDate,
             })
@@ -26,14 +26,14 @@ const TableAttendance = (props) => {
                         {moment(x.datetime).format('DD/MM/YYYY')}
                     </td>
                     <td className="text-center">
-                        {moment(x.datetime).format('h:m A')}
+                        {moment(x.datetime).format('h:mm A')}
                     </td>
                     <td className="text-uppercase">
                         {x.attendee_payloads.nama_penuh}
                     </td>
                     <td>{x.attendee_payloads.no_telefon}</td>
                     <td className="text-center">
-                        {x.attendee_payloads.bacaan_suhu}
+                        {x.nama_cawangan}
                     </td>
                 </tr>
             )
@@ -61,7 +61,7 @@ const TableAttendance = (props) => {
                         <th>Waktu</th>
                         <th>Nama</th>
                         <th>No Telefon</th>
-                        <th>Bacaan Suhu</th>
+                        <th>Lokasi</th>
                     </tr>
                 </thead>
                 <tbody>
